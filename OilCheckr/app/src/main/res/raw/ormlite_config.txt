@@ -1,0 +1,80 @@
+#
+# generated on 2014/12/10 09:50:42
+#
+# --table-start--
+dataClass=eu.artviz.oilcheckr.models.Oil
+tableName=oil
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=oilName
+# --field-end--
+# --field-start--
+fieldName=vehicle
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=range
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=eu.artviz.oilcheckr.models.Vehicle
+tableName=vehicle
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=currentMileage
+# --field-end--
+# --field-start--
+fieldName=oil
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=mileageUnit
+# --field-end--
+# --field-start--
+fieldName=averageDayMileage
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=eu.artviz.oilcheckr.models.History
+tableName=history
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=vehicle
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=oil
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=dateChanged
+# --field-end--
+# --field-start--
+fieldName=mileageChanged
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
