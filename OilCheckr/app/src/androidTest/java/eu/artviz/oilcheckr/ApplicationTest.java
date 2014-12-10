@@ -1,4 +1,4 @@
-package com.example.stefan.oilcheckr;
+package eu.artviz.oilcheckr;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
