@@ -28,6 +28,22 @@
             android:name="eu.artviz.oilcheckr.activities.UpdateMileageActivity"
             android:label="@string/title_activity_update_mileage" >
         </activity>
+        <activity
+            android:name="eu.artviz.oilcheckr.activities.AddVehicleActivity"
+            android:label="@string/title_activity_add_vehicle"
+            android:parentActivityName="eu.artviz.oilcheckr.activities.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.artviz.oilcheckr.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name="eu.artviz.oilcheckr.activities.OilChangeActivity"
+            android:label="@string/title_activity_oil_change" >
+        </activity>
+        <activity
+            android:name="eu.artviz.oilcheckr.activities.NewOilActivity"
+            android:label="@string/title_activity_new_oil" >
+        </activity>
     </application>
 
 </manifest>
