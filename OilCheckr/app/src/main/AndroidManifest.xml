@@ -8,13 +8,25 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="eu.artviz.oilcheckr.HomeActivity"
+            android:name="eu.artviz.oilcheckr.activities.HomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="eu.artviz.oilcheckr.activities.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName="eu.artviz.oilcheckr.activities.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.artviz.oilcheckr.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name="eu.artviz.oilcheckr.activities.UpdateMileageActivity"
+            android:label="@string/title_activity_update_mileage" >
         </activity>
     </application>
 
