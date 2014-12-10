@@ -1,12 +1,15 @@
 package eu.artviz.oilcheckr.models;
 
-public class Oil {
+import com.j256.ormlite.field.DatabaseField;
+
+public class Oil{
+    @DatabaseField(generatedId = true)
     private int id;
-
+    @DatabaseField
     private String oilName;
-
+    @DatabaseField(foreign = true,foreignAutoRefresh = true)
     private Vehicle vehicle;
-
+    @DatabaseField
     private int range;
 
     public Oil(){

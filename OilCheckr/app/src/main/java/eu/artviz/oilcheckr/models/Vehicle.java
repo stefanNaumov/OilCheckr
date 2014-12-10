@@ -1,16 +1,19 @@
 package eu.artviz.oilcheckr.models;
 
+import com.j256.ormlite.field.DatabaseField;
+
 public class Vehicle {
+    @DatabaseField(generatedId = true)
     private int id;
-
+    @DatabaseField
     private String name;
-
+    @DatabaseField
     private int currentMileage;
-
+    @DatabaseField(foreign = true,foreignAutoRefresh = true)
     private Oil oil;
-
+    @DatabaseField
     private MileageUnit mileageUnit;
-
+    @DatabaseField
     private int averageDayMileage;
 
     public Vehicle(){

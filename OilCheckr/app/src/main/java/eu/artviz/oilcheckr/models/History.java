@@ -1,18 +1,21 @@
 package eu.artviz.oilcheckr.models;
 
 
+import com.j256.ormlite.field.DatabaseField;
+
 import java.util.Date;
 
 
 public class History {
+    @DatabaseField(generatedId = true)
     private int id;
-
+    @DatabaseField(foreign = true,foreignAutoRefresh = true)
     private Vehicle vehicle;
-
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
     private Oil oil;
-
+    @DatabaseField
     private Date dateChanged;
-
+    @DatabaseField
     private int mileageChanged;
 
     public History(){
