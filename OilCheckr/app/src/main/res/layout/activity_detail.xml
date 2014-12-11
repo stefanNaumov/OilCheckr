@@ -15,7 +15,7 @@
          <TableRow>
              <TextView
                  style="@style/tvCarDetailsInfoStyle"
-                 android:text="@string/kilometres_Miles"
+                 android:text="@string/kilometres_miles"
                  android:id="@+id/tvKilometresMilesId"/>
 
              <TextView
@@ -25,7 +25,7 @@
          <TableRow>
              <TextView
                  style="@style/tvCarDetailsInfoStyle"
-                 android:text="@string/oil_Change_Target"
+                 android:text="@string/oil_change_target"
                  android:id="@+id/tvOilChangeTargetId"/>
 
              <TextView
@@ -35,7 +35,7 @@
          <TableRow>
              <TextView
                  style="@style/tvCarDetailsInfoStyle"
-                 android:text="@string/current_Oil"
+                 android:text="@string/current_oil"
                  android:id="@+id/tvCurrentOilId"/>
 
              <TextView
@@ -45,7 +45,7 @@
          <TableRow>
              <TextView
                  style="@style/tvCarDetailsInfoStyle"
-                 android:text="@string/average_Oil_Month"
+                 android:text="@string/average_oil_month"
                  android:id="@+id/tvAverageOilMonthId"
                  />
 
@@ -56,17 +56,17 @@
          <TableRow>
              <TextView
                  style="@style/tvToCarHistoryStyle"
-                 android:text="@string/to_Car_History"
+                 android:text="@string/to_car_history"
                  android:id="@+id/tvToCarHistoryId"/>
          </TableRow>
          <TableRow>
              <Button
                  style="@style/carDetailsBtnStyle"
-                 android:text="@string/to_Update"
+                 android:text="@string/to_update"
                  android:id="@+id/btnToUpdateId"/>
              <Button
                  style="@style/carDetailsBtnStyle"
-                 android:text="@string/oil_Change"
+                 android:text="@string/oil_change"
                  android:id="@+id/btnToOilChangeId" />
          </TableRow>
      </TableLayout>
