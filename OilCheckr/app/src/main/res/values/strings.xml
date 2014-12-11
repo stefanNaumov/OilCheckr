@@ -9,5 +9,12 @@
     <string name="title_activity_add_vehicle">AddVehicleActivity</string>
     <string name="title_activity_oil_change">OilChangeActivity</string>
     <string name="title_activity_new_oil">NewOilActivity</string>
+    <string name="kilometresMiles">Километри/Мили</string>
+    <string name="oilChangeTarget">Целта за смяна на масло</string>
+    <string name="currentOil">Текущо масло</string>
+    <string name="averageOilMonth">Среден разход на месец</string>
+    <string name="toCarHistory">Към историята на колата</string>
+    <string name="toUpdate">Към ъпдейт</string>
+    <string name="oilChange">Смяна на масло</string>
 
 </resources>

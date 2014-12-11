@@ -1,12 +1,78 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="eu.artviz.oilcheckr.activities.DetailActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="eu.artviz.oilcheckr.activities.DetailActivity"
+    android:orientation="vertical">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        style="@style/tvHeaderStyle"
+        android:id="@+id/tvHeaderId"/>
 
-</RelativeLayout>
+     <TableLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+         <TableRow>
+             <TextView
+                 style="@style/tvCarDetailsInfoStyle"
+                 android:text="@string/kilometresMiles"
+                 android:id="@+id/tvKilometresMilesId"/>
+
+             <TextView
+                 style="@style/tvCarDetailsValuesStyle"
+                 android:id="@+id/textView2"/>
+         </TableRow>
+         <TableRow>
+             <TextView
+                 style="@style/tvCarDetailsInfoStyle"
+                 android:text="@string/oilChangeTarget"
+                 android:id="@+id/tvOilChangeTargetId"/>
+
+             <TextView
+                 style="@style/tvCarDetailsValuesStyle"
+                 android:id="@+id/tvOilChangeTargetValueId" />
+         </TableRow>
+         <TableRow>
+             <TextView
+                 style="@style/tvCarDetailsInfoStyle"
+                 android:text="@string/currentOil"
+                 android:id="@+id/tvCurrentOilId"/>
+
+             <TextView
+                 style="@style/tvCarDetailsValuesStyle"
+                 android:id="@+id/tvCurrentOilValueId" />
+         </TableRow>
+         <TableRow>
+             <TextView
+                 style="@style/tvCarDetailsInfoStyle"
+                 android:text="@string/averageOilMonth"
+                 android:id="@+id/tvAverageOilMonthId"
+                 />
+
+             <TextView
+                 style="@style/tvCarDetailsValuesStyle"
+                 android:id="@+id/tvAverageOilMonthValueId" />
+         </TableRow>
+         <TableRow>
+             <TextView
+                 style="@style/tvToCarHistoryStyle"
+                 android:text="@string/toCarHistory"
+                 android:id="@+id/tvToCarHistoryId"/>
+         </TableRow>
+         <TableRow>
+             <Button
+                 style="@style/carDetailsBtnStyle"
+                 android:text="@string/toUpdate"
+                 android:id="@+id/btnToUpdateId"/>
+             <Button
+                 style="@style/carDetailsBtnStyle"
+                 android:text="@string/oilChange"
+                 android:id="@+id/btnToOilChangeId" />
+         </TableRow>
+     </TableLayout>
+
+
+
+
+
+</LinearLayout>
