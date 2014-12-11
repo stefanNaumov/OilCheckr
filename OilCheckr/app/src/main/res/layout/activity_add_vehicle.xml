@@ -6,7 +6,42 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="eu.artviz.oilcheckr.activities.AddVehicleActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_vehicle_name"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/vehicle_name"
+        android:layout_marginTop="172dp" />
 
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/km"
+        android:id="@+id/rb_km"
+        android:layout_below="@+id/et_vehicle_name"
+        android:layout_alignLeft="@+id/et_vehicle_name"
+        android:layout_alignStart="@+id/et_vehicle_name"
+        android:layout_marginTop="33dp"
+        android:checked="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mile"
+        android:id="@+id/rb_mile"
+        android:layout_below="@+id/rb_km"
+        android:layout_alignLeft="@+id/rb_km"
+        android:layout_alignStart="@+id/rb_km"
+        android:layout_marginTop="26dp"
+        android:checked="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_step"
+        android:id="@+id/btn_continue"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
