@@ -8,4 +8,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="eu.artviz.oilcheckr.activities.OilChangeActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oil_for_changing"
+        android:id="@+id/tvOilForChangingLabel"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvOilHistory"
+        android:layout_below="@+id/tvOilForChangingLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btnAddNewOil" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new_oil"
+        android:id="@+id/btnAddNewOil"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
