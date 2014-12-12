@@ -8,4 +8,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="eu.artviz.oilcheckr.activities.UpdateMileageActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etMileage"
+        android:hint="@string/current_mileage"
+        android:layout_above="@+id/btnSave"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="76dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_mileage"
+        android:id="@+id/btnSave"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
