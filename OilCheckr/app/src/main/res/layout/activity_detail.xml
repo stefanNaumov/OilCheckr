@@ -20,7 +20,7 @@
 
              <TextView
                  style="@style/tvCarDetailsValuesStyle"
-                 android:id="@+id/textView2"/>
+                 android:id="@+id/tvKilometresMilesValueId"/>
          </TableRow>
          <TableRow>
              <TextView

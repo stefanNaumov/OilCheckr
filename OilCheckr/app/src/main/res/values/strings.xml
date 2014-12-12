@@ -21,5 +21,10 @@
     <string name="km">Km</string>
     <string name="mile">Mile</string>
     <string name="next_step">Continue</string>
+    <string name="add_new_oil">Add New Oil</string>
+    <string name="oil_name">Oil Name</string>
+    <string name="add">Add</string>
+    <string name="ten_litres">10 litres</string>
+    <string name="eight_thousand">80000</string>
 
 </resources>

@@ -6,7 +6,41 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="eu.artviz.oilcheckr.activities.NewOilActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        style="@style/tvHeaderStyle"
+        android:text="@string/add_new_oil"
+        android:id="@+id/tvAddNewOilId"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:hint="@string/oil_name"
+        android:id="@+id/etOilNameId"
+        style="@style/etAddOilNameStyle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/add"
+        android:id="@+id/btnAddNewOilId"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        style="@style/etAddOilValuesStyle"
+        android:hint="@string/ten_litres"
+        android:id="@+id/etLitresCapacityId"
+        android:layout_below="@+id/etOilNameId"
+        android:layout_marginTop="60dp"/>
+
+    <EditText
+        style="@style/etAddOilValuesStyle"
+        android:hint="@string/eight_thousand"
+        android:id="@+id/etMileageRangeId"
+        android:layout_above="@+id/btnAddNewOilId"
+        android:layout_alignLeft="@+id/etLitresCapacityId"
+        android:layout_alignStart="@+id/etLitresCapacityId"
+        android:layout_marginBottom="45dp" />
 
 </RelativeLayout>

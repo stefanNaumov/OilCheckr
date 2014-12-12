@@ -43,4 +43,22 @@
         <item name="android:layout_marginTop">60dp</item>
     </style>
 
+    <style name="etAddOilNameStyle">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_below">@+id/tvAddNewOilId</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">74dp</item>
+    </style>
+
+    <style name="etAddOilValuesStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">number</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
 </resources>
