@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/capacity"
+        android:id="@+id/tvCapacityLabel"
+        android:layout_below="@+id/tvOilName"
+        android:layout_alignLeft="@+id/tvMileageLabel"
+        android:layout_alignStart="@+id/tvMileageLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oil_capacity_sample"
+        android:id="@+id/tvOilCapacity"
+        android:layout_above="@+id/tvMileageLabel"
+        android:layout_toRightOf="@+id/tvOilName"
+        android:layout_toEndOf="@+id/tvOilName"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mileage"
+        android:id="@+id/tvMileageLabel"
+        android:layout_below="@+id/tvCapacityLabel"
+        android:layout_toLeftOf="@+id/tvOilCapacity"
+        android:layout_toStartOf="@+id/tvOilCapacity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/km_sample"
+        android:id="@+id/tvMileage"
+        android:layout_below="@+id/tvOilCapacity"
+        android:layout_alignLeft="@+id/tvOilCapacity"
+        android:layout_alignStart="@+id/tvOilCapacity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/oil_sample"
+        android:id="@+id/tvOilName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
