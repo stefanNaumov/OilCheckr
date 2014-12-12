@@ -30,6 +30,8 @@
     <string name="km_sample_2">1500 km</string>
     <string name="oil_sample">Castrol 3000</string>
     <string name="km_sample_3">400 km</string>
+    <string name="save_mileage">Save</string>
+    <string name="current_mileage">Current Mileage</string>
     <string name="oil_capacity_sample">10 Litres</string>
     <string name="oil_for_changing">Choose Oil For Changing</string>
     <string name="capacity">Capacity</string>

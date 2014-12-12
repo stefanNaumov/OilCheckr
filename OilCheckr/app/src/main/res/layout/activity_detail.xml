@@ -113,13 +113,9 @@
         android:id="@+id/btnToOilChangeId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/oil_change"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:layout_toEndOf="@+id/tvAverageMileageLabel"
-        android:layout_toRightOf="@+id/tvAverageMileageLabel"
-        android:text="@string/oil_change" />
-
+        android:layout_toRightOf="@+id/tvToCarHistoryId"
+        android:layout_toEndOf="@+id/tvToCarHistoryId" />
 
 </RelativeLayout>
