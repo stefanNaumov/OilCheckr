@@ -15,7 +15,6 @@ import eu.artviz.oilcheckr.models.History;
 import eu.artviz.oilcheckr.models.Oil;
 import eu.artviz.oilcheckr.models.Vehicle;
 
-
 public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "oilcheckr.db";
     private static final int DATABASE_VERSION = 1;

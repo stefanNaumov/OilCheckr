@@ -7,7 +7,6 @@ import android.view.MenuItem;
 
 import eu.artviz.oilcheckr.R;
 
-
 public class HomeActivity extends Activity {
 
     @Override

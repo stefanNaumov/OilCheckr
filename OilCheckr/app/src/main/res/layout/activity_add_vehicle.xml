@@ -1,47 +1,58 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="eu.artviz.oilcheckr.activities.AddVehicleActivity">
 
     <EditText
+        android:id="@+id/etVehicleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/et_vehicle_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:hint="@string/vehicle_name"
-        android:layout_marginTop="172dp" />
+        android:layout_marginTop="172dp"
+        android:hint="@string/vehicle_name" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/km"
-        android:id="@+id/rb_km"
-        android:layout_below="@+id/et_vehicle_name"
-        android:layout_alignLeft="@+id/et_vehicle_name"
-        android:layout_alignStart="@+id/et_vehicle_name"
-        android:layout_marginTop="33dp"
-        android:checked="true" />
+        android:layout_alignEnd="@+id/etVehicleName"
+        android:layout_alignLeft="@+id/etVehicleName"
+        android:layout_alignRight="@+id/etVehicleName"
+        android:layout_alignStart="@+id/etVehicleName"
+        android:layout_below="@+id/etVehicleName"
+        android:orientation="vertical"
+        android:id="@+id/rgMileageUnit">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mile"
-        android:id="@+id/rb_mile"
-        android:layout_below="@+id/rb_km"
-        android:layout_alignLeft="@+id/rb_km"
-        android:layout_alignStart="@+id/rb_km"
-        android:layout_marginTop="26dp"
-        android:checked="false" />
+        <RadioButton
+            android:id="@+id/rbKm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="33dp"
+            android:checked="true"
+            android:text="@string/km" />
+
+        <RadioButton
+            android:id="@+id/rbMile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="26dp"
+            android:checked="false"
+            android:text="@string/mile" />
+
+    </RadioGroup>
 
     <Button
+        android:id="@+id/btnContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next_step"
-        android:id="@+id/btn_continue"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/next_step" />
 </RelativeLayout>

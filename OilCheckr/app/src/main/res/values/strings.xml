@@ -9,7 +9,7 @@
     <string name="title_activity_add_vehicle">AddVehicleActivity</string>
     <string name="title_activity_oil_change">OilChangeActivity</string>
     <string name="title_activity_new_oil">NewOilActivity</string>
-    <string name="kilometres_miles">Kilometres/Miles</string>
+    <string name="mileage">Mileage</string>
     <string name="oil_change_target">Oil Change Target</string>
     <string name="current_oil">Current Oil</string>
     <string name="average_oil_month">Average month consumption</string>
@@ -26,5 +26,9 @@
     <string name="add">Add</string>
     <string name="ten_litres">10 litres</string>
     <string name="eight_thousand">80000</string>
+    <string name="km_sample">1000 km</string>
+    <string name="km_sample_2">1500 km</string>
+    <string name="oil_sample">Castrol 3000</string>
+    <string name="km_sample_3">400 km</string>
 
 </resources>

@@ -1,10 +1,8 @@
 package eu.artviz.oilcheckr.models;
 
-
 import com.j256.ormlite.field.DatabaseField;
 
 import java.util.Date;
-
 
 public class History {
     @DatabaseField(generatedId = true)
