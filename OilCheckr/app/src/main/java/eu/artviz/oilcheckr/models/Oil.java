@@ -6,7 +6,7 @@ public class Oil{
     @DatabaseField(generatedId = true)
     private int id;
     @DatabaseField
-    private String oilName;
+    private String name;
     @DatabaseField(foreign = true,foreignAutoRefresh = true)
     private Vehicle vehicle;
     @DatabaseField
@@ -16,8 +16,8 @@ public class Oil{
 
     }
 
-    public Oil(String oilName,Vehicle vehicle, int range){
-        this.oilName = oilName;
+    public Oil(String name,Vehicle vehicle, int range){
+        this.name = name;
         this.vehicle = vehicle;
         this.range = range;
     }
@@ -34,12 +34,12 @@ public class Oil{
         this.vehicle = vehicle;
     }
 
-    public String getOilName() {
-        return oilName;
+    public String getName() {
+        return name;
     }
 
-    public void setOilName(String oilName) {
-        this.oilName = oilName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getRange() {
