@@ -8,8 +8,8 @@ public interface IOilDao {
     public Oil getById(int id);
     public List<Oil> getAll();
     public void create(Oil oil);
-    public void remove(Oil oil);
-    public void removeList(List<Oil> oilList);
+    public void delete(Oil oil);
+    public void deleteList(List<Oil> oilList);
     public void update(Oil oil);
     public void releaseDb();
 }

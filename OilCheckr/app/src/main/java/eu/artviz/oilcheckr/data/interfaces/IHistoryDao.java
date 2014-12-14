@@ -8,8 +8,8 @@ public interface IHistoryDao {
     public History getById(int id);
     public List<History> getAll();
     public void create(History history);
-    public void remove(History history);
-    public void removeList(List<History> historyList);
+    public void delete(History history);
+    public void deleteList(List<History> historyList);
     public void update(History history);
     public void releaseDb();
 }

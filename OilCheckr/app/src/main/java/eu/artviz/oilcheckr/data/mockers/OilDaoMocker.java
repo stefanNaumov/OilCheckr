@@ -31,12 +31,12 @@ public class OilDaoMocker implements IOilDao {
     }
 
     @Override
-    public void remove(Oil oil) {
+    public void delete(Oil oil) {
         oils.remove(oil);
     }
 
     @Override
-    public void removeList(List<Oil> oilList) {
+    public void deleteList(List<Oil> oilList) {
         oils.removeAll(oilList);
     }
 

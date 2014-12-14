@@ -33,12 +33,12 @@ public class VehicleDaoMocker implements IVehicleDao{
     }
 
     @Override
-    public void remove(Vehicle vehicle) {
+    public void delete(Vehicle vehicle) {
         vehicles.remove(vehicle);
     }
 
     @Override
-    public void removeList(List<Vehicle> vehicleList) {
+    public void deleteList(List<Vehicle> vehicleList) {
         vehicles.removeAll(vehicleList);
     }
 

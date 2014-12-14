@@ -33,13 +33,13 @@ public class HistoryDaoMocker implements IHistoryDao {
     }
 
     @Override
-    public void remove(History history) {
+    public void delete(History history) {
 
         historyList.remove(history);
     }
 
     @Override
-    public void removeList(List<History> historyList) {
+    public void deleteList(List<History> historyList) {
         historyList.removeAll(historyList);
     }
 
