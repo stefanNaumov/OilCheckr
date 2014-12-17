@@ -9,10 +9,10 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 import java.util.List;
 
 import eu.artviz.oilcheckr.data.DataBaseHelper;
-import eu.artviz.oilcheckr.data.interfaces.IVehicleDao;
+import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.Vehicle;
 
-public class VehicleDao implements IVehicleDao {
+public class VehicleDao implements IDao<Vehicle> {
 
     private DataBaseHelper dbHelper;
     private RuntimeExceptionDao<Vehicle, Integer> vehicleDao;

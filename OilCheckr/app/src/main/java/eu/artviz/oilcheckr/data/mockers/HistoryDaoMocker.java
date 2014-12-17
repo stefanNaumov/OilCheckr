@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import eu.artviz.oilcheckr.data.interfaces.IHistoryDao;
+import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.History;
 import eu.artviz.oilcheckr.models.Oil;
 import eu.artviz.oilcheckr.models.Vehicle;
 
-public class HistoryDaoMocker implements IHistoryDao {
+public class HistoryDaoMocker implements IDao<History> {
     private List<History> historyList;
 
     public HistoryDaoMocker(){

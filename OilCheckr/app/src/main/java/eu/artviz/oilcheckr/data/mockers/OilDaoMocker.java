@@ -3,12 +3,12 @@ package eu.artviz.oilcheckr.data.mockers;
 import java.util.ArrayList;
 import java.util.List;
 
-import eu.artviz.oilcheckr.data.interfaces.IOilDao;
+import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.Oil;
 import eu.artviz.oilcheckr.models.Vehicle;
 
 
-public class OilDaoMocker implements IOilDao {
+public class OilDaoMocker implements IDao<Oil> {
     private List<Oil> oils;
 
     public OilDaoMocker(){

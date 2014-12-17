@@ -9,10 +9,10 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 import java.util.List;
 
 import eu.artviz.oilcheckr.data.DataBaseHelper;
-import eu.artviz.oilcheckr.data.interfaces.IOilDao;
+import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.Oil;
 
-public class OilDao implements IOilDao {
+public class OilDao implements IDao<Oil> {
 
     private DataBaseHelper dbHelper;
     private RuntimeExceptionDao<Oil,Integer> oilDao;

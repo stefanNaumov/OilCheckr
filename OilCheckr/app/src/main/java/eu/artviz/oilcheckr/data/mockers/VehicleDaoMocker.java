@@ -3,13 +3,13 @@ package eu.artviz.oilcheckr.data.mockers;
 import java.util.ArrayList;
 import java.util.List;
 
-import eu.artviz.oilcheckr.data.interfaces.IVehicleDao;
+import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.MileageUnit;
 import eu.artviz.oilcheckr.models.Oil;
 import eu.artviz.oilcheckr.models.Vehicle;
 
 
-public class VehicleDaoMocker implements IVehicleDao{
+public class VehicleDaoMocker implements IDao<Vehicle>{
     private List<Vehicle> vehicles;
 
     public VehicleDaoMocker(){
