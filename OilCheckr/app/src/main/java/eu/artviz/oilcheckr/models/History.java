@@ -15,6 +15,8 @@ public class History {
     private Date dateChanged;
     @DatabaseField
     private int mileageChanged;
+    @DatabaseField
+    private Date lastMileageUpdateDate;
 
     public History(){
 
@@ -26,6 +28,7 @@ public class History {
         this.oil = oil;
         this.dateChanged = dateChanged;
         this.mileageChanged = mileageChanged;
+        this.lastMileageUpdateDate = new Date();
     }
 
     public int getId() {
@@ -62,5 +65,13 @@ public class History {
 
     public void setMileageChanged(int mileageChanged) {
         this.mileageChanged = mileageChanged;
+    }
+
+    public Date getLastMileageUpdateDate() {
+        return lastMileageUpdateDate;
+    }
+
+    public void setLastMileageUpdateDate(Date lastMileageUpdateDate) {
+        this.lastMileageUpdateDate = lastMileageUpdateDate;
     }
 }
