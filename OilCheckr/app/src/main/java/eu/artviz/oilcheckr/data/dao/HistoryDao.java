@@ -1,12 +1,12 @@
 package eu.artviz.oilcheckr.data.dao;
 
-
 import android.content.Context;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 
 import java.util.List;
+import java.util.Map;
 
 import eu.artviz.oilcheckr.data.DataBaseHelper;
 import eu.artviz.oilcheckr.data.interfaces.IDao;
@@ -21,6 +21,7 @@ public class HistoryDao implements IDao<History> {
         this.dbHelper = OpenHelperManager.getHelper(context, DataBaseHelper.class);
         this.historyDao = dbHelper.getHistoryRuntimeDao();
     }
+
     @Override
     public History getById(int id) {
         return historyDao.queryForId(id);
@@ -54,5 +55,10 @@ public class HistoryDao implements IDao<History> {
     @Override
     public void releaseDb() {
         OpenHelperManager.releaseHelper();
+    }
+
+    @Override
+    public List<History> search(Map<String, Object> fieldValues) {
+        return historyDao.queryForFieldValues(fieldValues);
     }
 }
