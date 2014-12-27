@@ -14,14 +14,13 @@ import java.util.List;
 import eu.artviz.oilcheckr.R;
 import eu.artviz.oilcheckr.adapters.VehicleAdapter;
 import eu.artviz.oilcheckr.common.Constants;
-import eu.artviz.oilcheckr.data.interfaces.IDao;
-import eu.artviz.oilcheckr.data.mockers.VehicleDaoMocker;
+import eu.artviz.oilcheckr.data.DataManager;
 import eu.artviz.oilcheckr.models.Vehicle;
 
 public class HomeActivity extends ListActivity implements View.OnClickListener{
 
+    private DataManager dataManager;
     private List<Vehicle> mVehicles;
-    private IDao<Vehicle> mVehicleDao;
 
     private ListView mLvVerhicles;
     private Button mBtnAddVehicle;
@@ -35,8 +34,8 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
     }
 
     private void init() {
-        mVehicleDao = new VehicleDaoMocker();
-        mVehicles = mVehicleDao.getAll();
+        dataManager = new DataManager();
+        mVehicles = dataManager.vehicles().getAll();
 
         mLvVerhicles = getListView();
         VehicleAdapter vehicleAdapter = new VehicleAdapter(this, mVehicles);
