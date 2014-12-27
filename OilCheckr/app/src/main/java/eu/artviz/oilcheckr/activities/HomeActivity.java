@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import eu.artviz.oilcheckr.R;
-import eu.artviz.oilcheckr.data.dao.HistoryDao;
-import eu.artviz.oilcheckr.models.History;
 
 public class HomeActivity extends Activity {
 
