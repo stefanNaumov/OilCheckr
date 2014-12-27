@@ -2,6 +2,7 @@ package eu.artviz.oilcheckr.data.mockers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.Oil;
@@ -53,6 +54,11 @@ public class OilDaoMocker implements IDao<Oil> {
     @Override
     public void releaseDb() {
 
+    }
+
+    @Override
+    public List<Oil> search(Map<String, Object> fieldValues) {
+        return generateData(1);
     }
 
     private List<Oil> generateData(int size){

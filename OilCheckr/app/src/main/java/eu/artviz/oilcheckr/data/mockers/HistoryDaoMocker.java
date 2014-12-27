@@ -3,6 +3,7 @@ package eu.artviz.oilcheckr.data.mockers;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.History;
@@ -56,6 +57,11 @@ public class HistoryDaoMocker implements IDao<History> {
     @Override
     public void releaseDb() {
 
+    }
+
+    @Override
+    public List<History> search(Map<String, Object> fieldValues) {
+        return generateData(1);
     }
 
     private List<History> generateData(int size){

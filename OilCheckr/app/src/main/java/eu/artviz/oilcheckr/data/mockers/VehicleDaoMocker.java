@@ -2,6 +2,7 @@ package eu.artviz.oilcheckr.data.mockers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.MileageUnit;
@@ -55,6 +56,11 @@ public class VehicleDaoMocker implements IDao<Vehicle>{
     @Override
     public void releaseDb() {
 
+    }
+
+    @Override
+    public List<Vehicle> search(Map<String, Object> fieldValues) {
+        return generateData(1);
     }
 
     private List<Vehicle> generateData(int size){
