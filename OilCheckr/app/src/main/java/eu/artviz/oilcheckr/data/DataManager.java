@@ -9,17 +9,30 @@ import eu.artviz.oilcheckr.models.Oil;
 import eu.artviz.oilcheckr.models.Vehicle;
 
 public class DataManager {
+    private static DataManager instance;
     private IDao<Vehicle> vehicleDao;
     private IDao<Oil> oilDao;
     private IDao<History> historyDao;
 
-    public DataManager() {
+    public static DataManager getInstance(){
+        if (instance == null){
+            instance = new DataManager();
+        }
+
+        return instance;
+    }
+
+    public static void init(IDao<Vehicle> vehicleDao, IDao<Oil> oilDao, IDao<History> historyDao){
+        instance = new DataManager(vehicleDao,oilDao,historyDao);
+    }
+
+    private DataManager() {
         vehicleDao = new VehicleDaoMocker();
         oilDao = new OilDaoMocker();
         historyDao = new HistoryDaoMocker();
     }
 
-    public DataManager(IDao<Vehicle> vehicleDao, IDao<Oil> oilDao, IDao<History> historyDao) {
+    private DataManager(IDao<Vehicle> vehicleDao, IDao<Oil> oilDao, IDao<History> historyDao) {
         this.vehicleDao = vehicleDao;
         this.oilDao = oilDao;
         this.historyDao = historyDao;
