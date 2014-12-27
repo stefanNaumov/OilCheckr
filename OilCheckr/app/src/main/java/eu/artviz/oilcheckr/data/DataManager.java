@@ -36,4 +36,10 @@ public class DataManager {
     public IDao<History> histories() {
         return historyDao;
     }
+
+    public void releaseDb() {
+        this.vehicleDao.releaseDb();
+        this.oilDao.releaseDb();
+        this.historyDao.releaseDb();
+    }
 }

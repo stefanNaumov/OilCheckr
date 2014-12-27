@@ -1,6 +1,7 @@
 package eu.artviz.oilcheckr.data.interfaces;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface IDao<T> {
@@ -11,4 +12,5 @@ public interface IDao<T> {
     public void deleteList(List<T>list);
     public void update(T object);
     public void releaseDb();
+    public List<T> search(Map<String, Object> fieldValues);
 }
