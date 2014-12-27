@@ -64,11 +64,13 @@ public class OilDaoMocker implements IDao<Oil> {
     private List<Oil> generateData(int size){
         List<Oil> oilsList = new ArrayList<Oil>();
         String oilName = "Oil";
+        String vehicleName = "VehicleName";
         int range = 50000;
         Vehicle vehicle = new Vehicle();
         Oil oil;
 
-        for (int i = 1; i < size; i++) {
+        for (int i = 1; i <= size; i++) {
+            vehicle.setName(vehicleName + String.valueOf(i));
             oil = new Oil(oilName + String.valueOf(i),vehicle,range);
             oilsList.add(oil);
         }

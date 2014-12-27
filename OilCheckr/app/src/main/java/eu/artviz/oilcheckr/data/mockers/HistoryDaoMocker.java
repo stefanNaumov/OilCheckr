@@ -66,13 +66,17 @@ public class HistoryDaoMocker implements IDao<History> {
 
     private List<History> generateData(int size){
         List<History> historyList = new ArrayList<History>();
+        String oilName = "OilName";
+        String vehicleName = "VehicleName";
         int mileage = 150000;
         Vehicle vehicle = new Vehicle();
         Oil oil = new Oil();
         Date date = new Date();
         History history;
 
-        for (int i = 1; i < size; i++) {
+        for (int i = 1; i <= size; i++) {
+            oil.setName(oilName + String.valueOf(i));
+            vehicle.setName(vehicleName + String.valueOf(i));
             history = new History(vehicle,oil,date,mileage);
             historyList.add(history);
         }
