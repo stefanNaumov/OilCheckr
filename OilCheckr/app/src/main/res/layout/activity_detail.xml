@@ -86,36 +86,36 @@
         android:id="@+id/tvAverageMileage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnToOilChangeId"
-        android:layout_alignStart="@+id/btnToOilChangeId"
+        android:layout_alignLeft="@+id/btnToOilChange"
+        android:layout_alignStart="@+id/btnToOilChange"
         android:layout_alignTop="@+id/tvAverageMileageLabel"
         android:text="@string/km_sample_3" />
 
     <TextView
-        android:id="@+id/tvToCarHistoryId"
+        android:id="@+id/tvToCarHistoryLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnToUpdateId"
+        android:layout_above="@+id/btnToUpdate"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="26dp"
         android:text="@string/to_car_history" />
 
     <Button
-        android:id="@+id/btnToUpdateId"
+        android:id="@+id/btnToUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/to_update"
-        android:layout_alignTop="@+id/btnToOilChangeId"
+        android:layout_alignTop="@+id/btnToOilChange"
         android:layout_toRightOf="@+id/tvMileageLabel"
         android:layout_toEndOf="@+id/tvMileageLabel" />
 
     <Button
-        android:id="@+id/btnToOilChangeId"
+        android:id="@+id/btnToOilChange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/oil_change"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/tvToCarHistoryId"
-        android:layout_toEndOf="@+id/tvToCarHistoryId" />
+        android:layout_toRightOf="@+id/tvToCarHistoryLabel"
+        android:layout_toEndOf="@+id/tvToCarHistoryLabel" />
 
 </RelativeLayout>
