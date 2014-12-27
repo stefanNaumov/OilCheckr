@@ -13,6 +13,7 @@ import java.util.List;
 
 import eu.artviz.oilcheckr.R;
 import eu.artviz.oilcheckr.adapters.VehicleAdapter;
+import eu.artviz.oilcheckr.common.Constants;
 import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.data.mockers.VehicleDaoMocker;
 import eu.artviz.oilcheckr.models.Vehicle;
@@ -55,7 +56,7 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 
     private void goToDetail(int position) {
         Intent detailIntent = new Intent(this, DetailActivity.class);
-        detailIntent.putExtra("VEHICLE", mVehicles.get(position));
+        detailIntent.putExtra(Constants.VEHICLE, mVehicles.get(position));
         startActivity(detailIntent);
     }
 
