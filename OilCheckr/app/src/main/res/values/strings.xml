@@ -36,5 +36,6 @@
     <string name="oil_for_changing">Choose Oil For Changing</string>
     <string name="capacity">Capacity</string>
     <string name="model">Model</string>
+    <string name="no_vehicles">No Vehicles!</string>
 
 </resources>
