@@ -1,8 +1,11 @@
 package eu.artviz.oilcheckr.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.j256.ormlite.field.DatabaseField;
 
-public class Oil{
+public class Oil implements Parcelable {
     @DatabaseField(generatedId = true)
     private int id;
     @DatabaseField
@@ -49,4 +52,34 @@ public class Oil{
     public void setRange(int range) {
         this.range = range;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.name);
+        dest.writeParcelable(this.vehicle, 0);
+        dest.writeInt(this.range);
+    }
+
+    private Oil(Parcel in) {
+        this.id = in.readInt();
+        this.name = in.readString();
+        this.vehicle = in.readParcelable(Vehicle.class.getClassLoader());
+        this.range = in.readInt();
+    }
+
+    public static final Parcelable.Creator<Oil> CREATOR = new Parcelable.Creator<Oil>() {
+        public Oil createFromParcel(Parcel source) {
+            return new Oil(source);
+        }
+
+        public Oil[] newArray(int size) {
+            return new Oil[size];
+        }
+    };
 }
