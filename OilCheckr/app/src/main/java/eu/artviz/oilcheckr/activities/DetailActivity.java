@@ -7,9 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import eu.artviz.oilcheckr.R;
 import eu.artviz.oilcheckr.common.Constants;
-import eu.artviz.oilcheckr.data.dao.HistoryDao;
+import eu.artviz.oilcheckr.data.DataManager;
 import eu.artviz.oilcheckr.models.History;
 import eu.artviz.oilcheckr.models.Vehicle;
 
@@ -19,12 +23,14 @@ public class DetailActivity extends Activity implements View.OnClickListener{
     private Button mBtnToUpdate, mBtnToOilChange;
     private Vehicle mVehicle;
     private History mHistory;
-    private HistoryDao mHistoryDao;
+    private DataManager mDataManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        initViews();
+        init();
     }
 
     private void initViews(){
@@ -42,22 +48,51 @@ public class DetailActivity extends Activity implements View.OnClickListener{
     }
 
     private void init(){
-        mHistoryDao = new HistoryDao(this);
-        mVehicle = (Vehicle)getIntent().getSerializableExtra(Constants.VEHICLE);
-        mTvVehicleName.setText(mVehicle.getName());
-        mTvMileage.setText(String.valueOf(mVehicle.getCurrentMileage()));
 
-        mTvCurrentOil.setText(mVehicle.getOil().getName());
-        mTvAverageMileage.setText(String.valueOf(mVehicle.getAverageDayMileage()));
+        mVehicle = (Vehicle)getIntent().getExtras().getParcelable(Constants.VEHICLE);
+        if (mVehicle != null) {
+            mTvVehicleName.setText(mVehicle.getName());
+            mTvMileage.setText(String.valueOf(mVehicle.getCurrentMileage()));
+
+            mTvCurrentOil.setText(mVehicle.getOil().getName());
+            mTvAverageMileage.setText(String.valueOf(mVehicle.getAverageDayMileage()));
+
+            mDataManager = DataManager.getInstance();
+
+            mHistory = getHistory();
+
+            if (mHistory != null) {
+                int range = mHistory.getMileageChanged() + mVehicle.getOil().getRange();
+                mTvOilChangeTarget.setText(String.valueOf(mHistory.getMileageChanged() + mVehicle.getOil().getRange()));
+            }
+        }
+    }
+
+    private History getHistory(){
+        Map<String, Object> map = new HashMap<String, Object>(); {
+            map.put("vehicleid", mVehicle.getId());
+            map.put("oilid",mVehicle.getOil().getId());
+        }
+        List<History> histories = mDataManager.histories().search(map);
+
+        if (histories.size() > 0){
+            return histories.get(0);
+        }
+
+        return null;
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         if (v.getId() == mBtnToUpdate.getId()){
-            Intent intent = new Intent(this,UpdateMileageActivity.class);
+            intent = new Intent(this,UpdateMileageActivity.class);
+            startActivity(intent);
         }
         else if(v.getId() == mBtnToOilChange.getId()){
-
+            intent = new Intent(this,OilChangeActivity.class);
+            startActivity(intent);
         }
+
     }
 }
