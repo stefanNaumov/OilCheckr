@@ -63,6 +63,10 @@ public class Vehicle implements Parcelable {
         return mileageUnit;
     }
 
+    public void setMileageUnit(MileageUnit mileageUnit) {
+        this.mileageUnit = mileageUnit;
+    }
+
     public int getAverageDayMileage() {
         return averageDayMileage;
     }
