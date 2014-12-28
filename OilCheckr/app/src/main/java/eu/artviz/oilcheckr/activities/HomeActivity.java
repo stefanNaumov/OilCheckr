@@ -19,7 +19,7 @@ import eu.artviz.oilcheckr.models.Vehicle;
 
 public class HomeActivity extends ListActivity implements View.OnClickListener{
 
-    private DataManager dataManager;
+    private DataManager mDataManager;
     private List<Vehicle> mVehicles;
 
     private ListView mLvVerhicles;
@@ -34,8 +34,8 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
     }
 
     private void init() {
-        dataManager = new DataManager();
-        mVehicles = dataManager.vehicles().getAll();
+        mDataManager = DataManager.getInstance();
+        mVehicles = mDataManager.vehicles().getAll();
 
         mLvVerhicles = getListView();
         VehicleAdapter vehicleAdapter = new VehicleAdapter(this, mVehicles);
@@ -95,5 +95,11 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
     private void goToAddVehicle() {
         Intent addVehicleIntent = new Intent(this, AddVehicleActivity.class);
         startActivity(addVehicleIntent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        mDataManager.releaseDb();
+        super.onDestroy();
     }
 }

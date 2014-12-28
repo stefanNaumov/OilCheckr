@@ -22,20 +22,10 @@ public class DataManager {
         return instance;
     }
 
-    public static void init(IDao<Vehicle> vehicleDao, IDao<Oil> oilDao, IDao<History> historyDao){
-        instance = new DataManager(vehicleDao,oilDao,historyDao);
-    }
-
     private DataManager() {
         vehicleDao = new VehicleDaoMocker();
         oilDao = new OilDaoMocker();
         historyDao = new HistoryDaoMocker();
-    }
-
-    private DataManager(IDao<Vehicle> vehicleDao, IDao<Oil> oilDao, IDao<History> historyDao) {
-        this.vehicleDao = vehicleDao;
-        this.oilDao = oilDao;
-        this.historyDao = historyDao;
     }
 
     public IDao<Vehicle> vehicles() {

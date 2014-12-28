@@ -48,7 +48,6 @@ public class DetailActivity extends Activity implements View.OnClickListener{
     }
 
     private void init(){
-
         mVehicle = (Vehicle)getIntent().getExtras().getParcelable(Constants.VEHICLE);
         if (mVehicle != null) {
             mTvVehicleName.setText(mVehicle.getName());
@@ -69,10 +68,11 @@ public class DetailActivity extends Activity implements View.OnClickListener{
     }
 
     private History getHistory(){
-        Map<String, Object> map = new HashMap<String, Object>(); {
-            map.put("vehicleid", mVehicle.getId());
-            map.put("oilid",mVehicle.getOil().getId());
-        }
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        map.put(Constants.HISTORY_VEHICLE_FIELD, mVehicle);
+        map.put(Constants.HISTORY_OIL_FIELD, mVehicle.getOil());
+
         List<History> histories = mDataManager.histories().search(map);
 
         if (histories.size() > 0){

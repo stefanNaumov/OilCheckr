@@ -3,7 +3,6 @@ package eu.artviz.oilcheckr.data.interfaces;
 import java.util.List;
 import java.util.Map;
 
-
 public interface IDao<T> {
     public T getById(int id);
     public List<T> getAll();
