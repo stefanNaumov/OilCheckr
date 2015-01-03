@@ -68,12 +68,18 @@ public class VehicleDaoMocker implements IDao<Vehicle>{
         String vehicleName = "Vehicle";
         String oilName = "OilName";
         int mileage = 10000;
+        int averageDayMileage = 20;
         Oil oil = new Oil();
         Vehicle vehicle;
 
         for (int i =1; i <= size; i++) {
             oil.setName(oilName + String.valueOf(i));
-            vehicle = new Vehicle(vehicleName + String.valueOf(i),mileage * i,oil, MileageUnit.Kilometres,100/i);
+            vehicle = new Vehicle(vehicleName + String.valueOf(i),i * 2);
+            vehicle.setMileageUnit(MileageUnit.Kilometres);
+            vehicle.setCurrentMileage(mileage * i);
+            vehicle.setAverageDayMileage(averageDayMileage * i);
+            vehicle.setOil(oil);
+
             vehiclesList.add(vehicle);
         }
 

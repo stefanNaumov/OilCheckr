@@ -40,4 +40,8 @@
     <string name="enter_vehicle_name">Please enter a vehicle name</string>
     <string name="enter_mileage">Please enter vehicle mileage</string>
     <string name="mileage_updated">Mileage updated</string>
+    <string name="enter_oil_name">Please enter oil name</string>
+    <string name="enter_mileage_range">Please enter mileage range</string>
+    <string name="enter_oil_capacity">Please enter oil capacity</string>
+    <string name="oil_capacity">Oil Capacity</string>
 </resources>

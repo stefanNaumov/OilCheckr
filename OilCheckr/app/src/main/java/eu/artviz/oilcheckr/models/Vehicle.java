@@ -18,17 +18,16 @@ public class Vehicle implements Parcelable {
     private MileageUnit mileageUnit;
     @DatabaseField
     private int averageDayMileage;
+    @DatabaseField
+    private int oilCapacity;
 
     public Vehicle(){
 
     }
 
-    public Vehicle(String name, int currentMileage, Oil oil,MileageUnit mileageUnit, int averageDayMileage) {
+    public Vehicle(String name, int oilCapacity) {
         this.name = name;
-        this.currentMileage = currentMileage;
-        this.oil = oil;
-        this.mileageUnit = mileageUnit;
-        this.averageDayMileage = averageDayMileage;
+        this.oilCapacity = oilCapacity;
     }
 
     public int getId() {
@@ -73,6 +72,10 @@ public class Vehicle implements Parcelable {
 
     public void setAverageDayMileage(int averageDayMileage) {
         this.averageDayMileage = averageDayMileage;
+    }
+
+    public int getOilCapacity() {
+        return oilCapacity;
     }
 
     @Override

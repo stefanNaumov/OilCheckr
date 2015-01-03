@@ -17,7 +17,7 @@
         android:hint="@string/oil_name" />
 
     <Button
-        android:id="@+id/btnAddNewOilId"
+        android:id="@+id/btnAddNewOil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -25,21 +25,13 @@
         android:text="@string/add" />
 
     <EditText
-        android:id="@+id/etCapacity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etOilName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:hint="@string/ten_litres" />
-
-    <EditText
         android:id="@+id/etMileageRange"
+        android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etCapacity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:hint="@string/eight_thousand" />
+        android:layout_marginTop="41dp"
+        android:hint="@string/eight_thousand"
+        android:layout_below="@+id/etOilName"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
