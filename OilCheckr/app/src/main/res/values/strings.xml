@@ -38,4 +38,6 @@
     <string name="model">Model</string>
     <string name="no_vehicles">No Vehicles!</string>
     <string name="enter_vehicle_name">Please enter a vehicle name</string>
+    <string name="enter_mileage">Please enter vehicle mileage</string>
+    <string name="mileage_updated">Mileage updated</string>
 </resources>

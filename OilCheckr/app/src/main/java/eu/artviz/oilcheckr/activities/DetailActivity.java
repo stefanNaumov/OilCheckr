@@ -87,10 +87,12 @@ public class DetailActivity extends Activity implements View.OnClickListener{
         Intent intent;
         if (v.getId() == mBtnToUpdate.getId()){
             intent = new Intent(this,UpdateMileageActivity.class);
+            intent.putExtra(Constants.VEHICLE,mVehicle);
             startActivity(intent);
         }
         else if(v.getId() == mBtnToOilChange.getId()){
             intent = new Intent(this,OilChangeActivity.class);
+            intent.putExtra(Constants.VEHICLE,mVehicle);
             startActivity(intent);
         }
 
