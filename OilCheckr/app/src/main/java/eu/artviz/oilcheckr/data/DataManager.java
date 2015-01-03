@@ -2,6 +2,9 @@ package eu.artviz.oilcheckr.data;
 
 import android.content.Context;
 
+import eu.artviz.oilcheckr.data.dao.HistoryDao;
+import eu.artviz.oilcheckr.data.dao.OilDao;
+import eu.artviz.oilcheckr.data.dao.VehicleDao;
 import eu.artviz.oilcheckr.data.interfaces.IDao;
 import eu.artviz.oilcheckr.models.History;
 import eu.artviz.oilcheckr.models.Oil;
@@ -25,7 +28,9 @@ public class DataManager {
     }
 
     private DataManager(Context context) {
-        setContext(context);
+        vehicleDao = new VehicleDao(context);
+        oilDao = new OilDao(context);
+        historyDao = new HistoryDao(context);
     }
 
     public IDao<Vehicle> vehicles() {
