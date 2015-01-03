@@ -34,7 +34,7 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
     }
 
     private void init() {
-        mDataManager = DataManager.getInstance();
+        mDataManager = DataManager.getInstance(this);
         mVehicles = mDataManager.vehicles().getAll();
 
         mLvVerhicles = getListView();

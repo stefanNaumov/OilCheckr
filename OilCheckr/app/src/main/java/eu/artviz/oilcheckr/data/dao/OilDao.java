@@ -18,8 +18,7 @@ public class OilDao implements IDao<Oil> {
     private RuntimeExceptionDao<Oil,Integer> oilDao;
 
     public OilDao(Context context){
-        this.dbHelper = OpenHelperManager.getHelper(context, DataBaseHelper.class);
-        this.oilDao = dbHelper.getOilRuntimeDao();
+        setup(context);
     }
 
     @Override
@@ -60,5 +59,11 @@ public class OilDao implements IDao<Oil> {
     @Override
     public List<Oil> search(Map<String, Object> fieldValues) {
         return oilDao.queryForFieldValues(fieldValues);
+    }
+
+    @Override
+    public void setup(Context context) {
+        this.dbHelper = OpenHelperManager.getHelper(context, DataBaseHelper.class);
+        this.oilDao = dbHelper.getOilRuntimeDao();
     }
 }

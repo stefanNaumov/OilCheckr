@@ -18,8 +18,7 @@ public class HistoryDao implements IDao<History> {
     private RuntimeExceptionDao<History,Integer> historyDao;
 
     public HistoryDao(Context context){
-        this.dbHelper = OpenHelperManager.getHelper(context, DataBaseHelper.class);
-        this.historyDao = dbHelper.getHistoryRuntimeDao();
+        setup(context);
     }
 
     @Override
@@ -60,5 +59,11 @@ public class HistoryDao implements IDao<History> {
     @Override
     public List<History> search(Map<String, Object> fieldValues) {
         return historyDao.queryForFieldValues(fieldValues);
+    }
+
+    @Override
+    public void setup(Context context) {
+        this.dbHelper = OpenHelperManager.getHelper(context, DataBaseHelper.class);
+        this.historyDao = dbHelper.getHistoryRuntimeDao();
     }
 }

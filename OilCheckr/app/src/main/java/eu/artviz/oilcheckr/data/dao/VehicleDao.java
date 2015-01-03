@@ -18,8 +18,7 @@ public class VehicleDao implements IDao<Vehicle> {
     private RuntimeExceptionDao<Vehicle, Integer> vehicleDao;
 
     public VehicleDao(Context context){
-        this.dbHelper = OpenHelperManager.getHelper(context, DataBaseHelper.class);
-        this.vehicleDao = this.dbHelper.getVehicleRuntimeDao();
+        setup(context);
     }
 
     @Override
@@ -60,5 +59,11 @@ public class VehicleDao implements IDao<Vehicle> {
     @Override
     public List<Vehicle> search(Map<String, Object> fieldValues) {
         return vehicleDao.queryForFieldValues(fieldValues);
+    }
+
+    @Override
+    public void setup(Context context) {
+        this.dbHelper = OpenHelperManager.getHelper(context, DataBaseHelper.class);
+        this.vehicleDao = this.dbHelper.getVehicleRuntimeDao();
     }
 }

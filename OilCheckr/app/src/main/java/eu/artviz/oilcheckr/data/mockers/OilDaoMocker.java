@@ -1,5 +1,7 @@
 package eu.artviz.oilcheckr.data.mockers;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +14,7 @@ import eu.artviz.oilcheckr.models.Vehicle;
 public class OilDaoMocker implements IDao<Oil> {
     private List<Oil> oils;
 
-    public OilDaoMocker(){
+    public OilDaoMocker(Context context){
         this.oils = generateData(20);
     }
     @Override
@@ -53,6 +55,11 @@ public class OilDaoMocker implements IDao<Oil> {
 
     @Override
     public void releaseDb() {
+
+    }
+
+    @Override
+    public void setup(Context context) {
 
     }
 

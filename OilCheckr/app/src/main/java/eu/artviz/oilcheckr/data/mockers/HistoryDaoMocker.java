@@ -1,5 +1,7 @@
 package eu.artviz.oilcheckr.data.mockers;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +15,7 @@ import eu.artviz.oilcheckr.models.Vehicle;
 public class HistoryDaoMocker implements IDao<History> {
     private List<History> historyList;
 
-    public HistoryDaoMocker(){
+    public HistoryDaoMocker(Context context){
         this.historyList = generateData(20);
     }
 
@@ -56,6 +58,11 @@ public class HistoryDaoMocker implements IDao<History> {
 
     @Override
     public void releaseDb() {
+
+    }
+
+    @Override
+    public void setup(Context context) {
 
     }
 
