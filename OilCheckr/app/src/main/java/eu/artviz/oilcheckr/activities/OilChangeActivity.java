@@ -15,7 +15,6 @@ public class OilChangeActivity extends Activity {
         setContentView(R.layout.activity_oil_change);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -29,8 +29,14 @@ public class DetailActivity extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        initViews();
+
         init();
+        initViews();
+    }
+
+    private void init(){
+        mDataManager = DataManager.getInstance(this);
+        mVehicle = (Vehicle)getIntent().getExtras().getParcelable(Constants.VEHICLE);
     }
 
     private void initViews(){
@@ -45,20 +51,17 @@ public class DetailActivity extends Activity implements View.OnClickListener{
 
         mBtnToUpdate.setOnClickListener(this);
         mBtnToOilChange.setOnClickListener(this);
-    }
 
-    private void init(){
-        mVehicle = (Vehicle)getIntent().getExtras().getParcelable(Constants.VEHICLE);
         if (mVehicle != null) {
             mTvVehicleName.setText(mVehicle.getName());
             mTvMileage.setText(String.valueOf(mVehicle.getCurrentMileage()));
 
-            mTvCurrentOil.setText(mVehicle.getOil().getName());
+            if (mVehicle.getOil() != null) {
+                mTvCurrentOil.setText(mVehicle.getOil().getName());
+                mHistory = getHistory();
+            }
+
             mTvAverageMileage.setText(String.valueOf(mVehicle.getAverageDayMileage()));
-
-            mDataManager = DataManager.getInstance();
-
-            mHistory = getHistory();
 
             if (mHistory != null) {
                 int range = mHistory.getMileageChanged() + mVehicle.getOil().getRange();
@@ -71,7 +74,7 @@ public class DetailActivity extends Activity implements View.OnClickListener{
         Map<String, Object> map = new HashMap<String, Object>();
 
         map.put(Constants.HISTORY_VEHICLE_FIELD, mVehicle);
-        map.put(Constants.HISTORY_OIL_FIELD, mVehicle.getOil());
+        map.put(Constants.HISTORY_OIL_FIELD, mVehicle.getOil().getId());
 
         List<History> histories = mDataManager.histories().search(map);
 
@@ -88,6 +91,7 @@ public class DetailActivity extends Activity implements View.OnClickListener{
         if (v.getId() == mBtnToUpdate.getId()){
             intent = new Intent(this,UpdateMileageActivity.class);
             intent.putExtra(Constants.VEHICLE,mVehicle);
+            intent.putExtra(Constants.FROM_DETAIL, true);
             startActivity(intent);
         }
         else if(v.getId() == mBtnToOilChange.getId()){

@@ -1,6 +1,6 @@
 package eu.artviz.oilcheckr.models;
 
 public enum MileageUnit {
-    Kilometres,
-    Miles
+    KM,
+    MI
 }

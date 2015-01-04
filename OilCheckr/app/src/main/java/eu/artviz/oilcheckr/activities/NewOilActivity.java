@@ -32,7 +32,7 @@ public class NewOilActivity extends Activity implements View.OnClickListener{
 
     private void init(){
         mVehicle = (Vehicle)getIntent().getExtras().getParcelable(Constants.VEHICLE);
-        mDataManager = DataManager.getInstance();
+        mDataManager = DataManager.getInstance(this);
     }
 
     private void initViews(){

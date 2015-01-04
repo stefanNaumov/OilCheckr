@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import eu.artviz.oilcheckr.R;
 import eu.artviz.oilcheckr.common.Constants;
+import eu.artviz.oilcheckr.data.DataManager;
 import eu.artviz.oilcheckr.models.MileageUnit;
 import eu.artviz.oilcheckr.models.Vehicle;
 
@@ -22,8 +23,9 @@ public class AddVehicleActivity extends Activity implements View.OnClickListener
     private RadioGroup mRgMileageUnit;
     private RadioButton mRbKm;
     private RadioButton mRbMiles;
-    private Button mBtnContinue;
+    private Button mBtnUpdateMileage;
     private Vehicle mVehicle;
+    private DataManager dataManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class AddVehicleActivity extends Activity implements View.OnClickListener
     }
 
     private void init(){
-
+        dataManager = DataManager.getInstance(this);
     }
 
     private void initViews(){
@@ -43,8 +45,8 @@ public class AddVehicleActivity extends Activity implements View.OnClickListener
         mRgMileageUnit = (RadioGroup)findViewById(R.id.rgMileageUnit);
         mRbKm = (RadioButton)findViewById(R.id.rbKm);
         mRbMiles = (RadioButton)findViewById(R.id.rbMile);
-        mBtnContinue = (Button)findViewById(R.id.btnContinue);
-        mBtnContinue.setOnClickListener(this);
+        mBtnUpdateMileage = (Button)findViewById(R.id.btnUpdateMileage);
+        mBtnUpdateMileage.setOnClickListener(this);
     }
 
     private RadioButton getCheckedRadio(){
@@ -76,10 +78,10 @@ public class AddVehicleActivity extends Activity implements View.OnClickListener
         mVehicle = new Vehicle(vehicleName,oilCapacity);
 
         if (checkedRdBtn.getId() == mRbKm.getId()){
-            mVehicle.setMileageUnit(MileageUnit.Kilometres);
+            mVehicle.setMileageUnit(MileageUnit.KM);
         }
         else{
-            mVehicle.setMileageUnit(MileageUnit.Miles);
+            mVehicle.setMileageUnit(MileageUnit.MI);
         }
 
         return true;
@@ -87,12 +89,14 @@ public class AddVehicleActivity extends Activity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == mBtnContinue.getId()){
-
+        if (v.getId() == mBtnUpdateMileage.getId()){
             if (setVehicle()){
-                Intent intent = new Intent(this,UpdateMileageActivity.class);
-                intent.putExtra(Constants.VEHICLE,mVehicle);
-                startActivity(intent);
+                dataManager.vehicles().create(mVehicle);
+
+                Intent updateMileageIntent = new Intent(this,UpdateMileageActivity.class);
+                updateMileageIntent.putExtra(Constants.VEHICLE, mVehicle);
+                updateMileageIntent.putExtra(Constants.FROM_HOME, true);
+                startActivity(updateMileageIntent);
             }
         }
     }

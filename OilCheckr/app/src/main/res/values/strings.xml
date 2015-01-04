@@ -44,4 +44,5 @@
     <string name="enter_mileage_range">Please enter mileage range</string>
     <string name="enter_oil_capacity">Please enter oil capacity</string>
     <string name="oil_capacity">Oil Capacity</string>
+    <string name="invalid_mileage_update">can\'t be more than 8 digits</string>
 </resources>

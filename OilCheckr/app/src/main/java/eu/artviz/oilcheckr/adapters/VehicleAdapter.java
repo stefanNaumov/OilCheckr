@@ -59,7 +59,7 @@ public class VehicleAdapter extends BaseAdapter {
 
         if (vehicle != null) {
             holder.name.setText(vehicle.getName());
-            holder.mileage.setText(String.valueOf(vehicle.getCurrentMileage()));
+            holder.mileage.setText(String.valueOf(vehicle.getCurrentMileage()) + " " + vehicle.getMileageUnit());
         }
 
         return row;
