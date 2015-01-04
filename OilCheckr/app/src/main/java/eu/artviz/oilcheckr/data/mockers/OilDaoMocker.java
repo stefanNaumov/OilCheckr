@@ -78,7 +78,7 @@ public class OilDaoMocker implements IDao<Oil> {
 
         for (int i = 1; i <= size; i++) {
             vehicle.setName(vehicleName + String.valueOf(i));
-            oil = new Oil(oilName + String.valueOf(i),vehicle,range);
+            oil = new Oil(oilName + String.valueOf(i), range);
             oilsList.add(oil);
         }
 

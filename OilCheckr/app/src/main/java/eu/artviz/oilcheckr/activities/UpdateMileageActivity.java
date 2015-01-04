@@ -11,12 +11,14 @@ import android.widget.Toast;
 import eu.artviz.oilcheckr.R;
 import eu.artviz.oilcheckr.common.Constants;
 import eu.artviz.oilcheckr.data.DataManager;
+import eu.artviz.oilcheckr.models.History;
 import eu.artviz.oilcheckr.models.Vehicle;
 
 public class UpdateMileageActivity extends Activity implements View.OnClickListener{
 
-    private DataManager dataManager;
+    private DataManager mDataManager;
     private Vehicle mVehicle;
+    private History mHistory;
     private Bundle mBundle;
 
     private EditText mEtMileage;
@@ -32,10 +34,11 @@ public class UpdateMileageActivity extends Activity implements View.OnClickListe
     }
 
     private void init(){
-        dataManager = DataManager.getInstance(this);
+        mDataManager = DataManager.getInstance(this);
         mBundle = getIntent().getExtras();
 
         mVehicle = (Vehicle) mBundle.getParcelable(Constants.VEHICLE);
+        mHistory = (History) mBundle.getParcelable(Constants.HISTORY);
     }
 
     private void initViews(){
@@ -62,9 +65,14 @@ public class UpdateMileageActivity extends Activity implements View.OnClickListe
 
                     mVehicle.setCurrentMileage(mileage);
 
-                    dataManager.vehicles().update(mVehicle);
+                    mDataManager.vehicles().update(mVehicle);
 
                     Toast.makeText(this, R.string.mileage_updated,Toast.LENGTH_LONG).show();
+
+                    if (mHistory != null) {
+                        mHistory.setMileageChanged(mVehicle.getCurrentMileage());
+                        mDataManager.histories().create(mHistory);
+                    }
 
                     navigateBack();
                 }

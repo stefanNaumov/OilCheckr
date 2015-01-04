@@ -74,7 +74,7 @@ public class DetailActivity extends Activity implements View.OnClickListener{
         Map<String, Object> map = new HashMap<String, Object>();
 
         map.put(Constants.HISTORY_VEHICLE_FIELD, mVehicle);
-        map.put(Constants.HISTORY_OIL_FIELD, mVehicle.getOil().getId());
+        map.put(Constants.HISTORY_OIL_FIELD, mVehicle.getOil());
 
         List<History> histories = mDataManager.histories().search(map);
 

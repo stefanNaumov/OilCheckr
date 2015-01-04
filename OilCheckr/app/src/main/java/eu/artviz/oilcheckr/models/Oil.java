@@ -19,9 +19,8 @@ public class Oil implements Parcelable {
 
     }
 
-    public Oil(String name,Vehicle vehicle, int range){
+    public Oil(String name, int range){
         this.name = name;
-        this.vehicle = vehicle;
         this.range = range;
     }
 

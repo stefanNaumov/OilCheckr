@@ -1,10 +1,13 @@
 package eu.artviz.oilcheckr.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.j256.ormlite.field.DatabaseField;
 
 import java.util.Date;
 
-public class History {
+public class History implements Parcelable {
     @DatabaseField(generatedId = true)
     private int id;
     @DatabaseField(foreign = true,foreignAutoRefresh = true)
@@ -22,12 +25,10 @@ public class History {
 
     }
 
-    public History(Vehicle vehicle, Oil oil, Date dateChanged, int mileageChanged){
-        super();
+    public History(Vehicle vehicle, Oil oil, Date dateChanged){
         this.vehicle = vehicle;
         this.oil = oil;
         this.dateChanged = dateChanged;
-        this.mileageChanged = mileageChanged;
         this.lastMileageUpdateDate = new Date();
     }
 
@@ -74,4 +75,40 @@ public class History {
     public void setLastMileageUpdateDate(Date lastMileageUpdateDate) {
         this.lastMileageUpdateDate = lastMileageUpdateDate;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeParcelable(this.vehicle, 0);
+        dest.writeParcelable(this.oil, 0);
+        dest.writeLong(dateChanged != null ? dateChanged.getTime() : -1);
+        dest.writeInt(this.mileageChanged);
+        dest.writeLong(lastMileageUpdateDate != null ? lastMileageUpdateDate.getTime() : -1);
+    }
+
+    private History(Parcel in) {
+        this.id = in.readInt();
+        this.vehicle = in.readParcelable(Vehicle.class.getClassLoader());
+        this.oil = in.readParcelable(Oil.class.getClassLoader());
+        long tmpDateChanged = in.readLong();
+        this.dateChanged = tmpDateChanged == -1 ? null : new Date(tmpDateChanged);
+        this.mileageChanged = in.readInt();
+        long tmpLastMileageUpdateDate = in.readLong();
+        this.lastMileageUpdateDate = tmpLastMileageUpdateDate == -1 ? null : new Date(tmpLastMileageUpdateDate);
+    }
+
+    public static final Parcelable.Creator<History> CREATOR = new Parcelable.Creator<History>() {
+        public History createFromParcel(Parcel source) {
+            return new History(source);
+        }
+
+        public History[] newArray(int size) {
+            return new History[size];
+        }
+    };
 }

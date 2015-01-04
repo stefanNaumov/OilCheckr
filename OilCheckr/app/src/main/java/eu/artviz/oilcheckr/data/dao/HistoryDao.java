@@ -58,7 +58,9 @@ public class HistoryDao implements IDao<History> {
 
     @Override
     public List<History> search(Map<String, Object> fieldValues) {
-        return historyDao.queryForFieldValues(fieldValues);
+        List<History> histories = historyDao.queryForFieldValues(fieldValues);
+
+        return histories;
     }
 
     @Override

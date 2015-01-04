@@ -50,7 +50,7 @@ public class HistoryDaoMocker implements IDao<History> {
     public void update(History history) {
         for (History historyObj : historyList){
             if (historyObj.getDateChanged() == history.getDateChanged()){
-                historyList.set(historyList.indexOf(historyObj),history);
+                historyList.set(historyList.indexOf(historyObj), history);
                 break;
             }
         }
@@ -84,7 +84,7 @@ public class HistoryDaoMocker implements IDao<History> {
         for (int i = 1; i <= size; i++) {
             oil.setName(oilName + String.valueOf(i));
             vehicle.setName(vehicleName + String.valueOf(i));
-            history = new History(vehicle,oil,date,mileage);
+            history = new History(vehicle, oil, date);
             historyList.add(history);
         }
 
