@@ -15,11 +15,13 @@ import eu.artviz.oilcheckr.R;
 import eu.artviz.oilcheckr.adapters.VehicleAdapter;
 import eu.artviz.oilcheckr.common.Constants;
 import eu.artviz.oilcheckr.data.DataManager;
+import eu.artviz.oilcheckr.helpers.DataSeeder;
 import eu.artviz.oilcheckr.models.Vehicle;
 
 public class HomeActivity extends ListActivity implements View.OnClickListener{
 
     private DataManager mDataManager;
+    private DataSeeder mDataSeeder;
     private List<Vehicle> mVehicles;
 
     private ListView mLvVerhicles;
@@ -35,6 +37,11 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 
     private void init() {
         mDataManager = DataManager.getInstance(this);
+        if (mDataManager.vehicles().getAll().size() == 0) {
+            mDataSeeder = new DataSeeder(this);
+            mDataSeeder.seed();
+        }
+
         mVehicles = mDataManager.vehicles().getAll();
 
         mLvVerhicles = getListView();
